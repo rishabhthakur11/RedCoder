@@ -4,6 +4,7 @@ import { Roboto } from "next/font/google";
 import { Course } from "@/components/Course";
 import Tags from "@/components/Tags";
 import SearchBox from "@/components/SearchBox";
+import TabularDesign from "@/components/TabularDesign";
 
 interface Props {}
 const roboto = Roboto({
@@ -50,8 +51,12 @@ export default function problem(props: Props) {
                 <Tags tagTitle="Difficulty" toggleMenu={Difficulty} />
                 <Tags tagTitle="Status" toggleMenu={Status} />
                 <Tags tagTitle="Tags" toggleMenu={Difficulty} />
-                <SearchBox/>
+                <SearchBox />
               </div>
+            </div>
+            {/* tabular Design  */}
+            <div className="max-w-5xl mx-auto">
+              <TabularDesign />
             </div>
           </div>
         </div>
