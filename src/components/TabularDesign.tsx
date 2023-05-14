@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import ReactPaginate from "react-paginate";
+import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
+import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 
 function TabularDesign() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -150,13 +152,13 @@ function TabularDesign() {
             </th>
           </tr>
         </thead>
-        <tbody className="bg-boxBrown divide-y divide-lightBrown">
+        <tbody className="odd:bg-boxBrown divide-y divide-lightBrown">
           {currentPageData.map((item) => (
-            <tr key={item.id}>
+            <tr key={item.id} className="even:bg-boxBrown">
               <td className="px-2 py-4 whitespace-nowrap text-base font-medium text-textGray">
                 {item.status}
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-base font-medium text-textGray">
+              <td className="px-6 py-4 whitespace-nowrap text-base font-medium text-textGray cursor-pointer hover:text-textBlue">
                 {item.title}
               </td>
               <td className="px-2 py-4 whitespace-nowrap text-base font-medium text-textGray">
@@ -170,10 +172,11 @@ function TabularDesign() {
         </tbody>
       </table>
       <ReactPaginate
-        previousLabel={"previous"}
-        nextLabel="next >"
+        className="flex justify-between w-1/4 mt-5 text-base rounded-md bg-boxBrown p-3"
+        previousLabel={<ArrowBackIosNewRoundedIcon />}
+        nextLabel={<ArrowForwardIosRoundedIcon />}
         onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
+        pageRangeDisplayed={6}
         pageCount={pageCount}
         renderOnZeroPageCount={null}
       />

@@ -5,6 +5,7 @@ import { Course } from "@/components/Course";
 import Tags from "@/components/Tags";
 import SearchBox from "@/components/SearchBox";
 import TabularDesign from "@/components/TabularDesign";
+import { Calender } from "@/components/Calender";
 
 interface Props {}
 const roboto = Roboto({
@@ -26,7 +27,7 @@ export default function problem(props: Props) {
   const Difficulty = ["Easy", "Medium", "Hard"];
   const Status = ["To-do", "Solved", "Attempted"];
   return (
-    <main className={`flex min-h-screen flex-col ${roboto.className}`}>
+    <main className={`flex min-h-screen flex-col ${roboto.className} mb-10`}>
       <div className="left-0 top-0 flex w-full  bg-mildBrown pt-3 pb-3 lg:static lg:w-auto lg:p-3">
         {/* NavBar */}
         <Header />
@@ -60,7 +61,9 @@ export default function problem(props: Props) {
             </div>
           </div>
         </div>
-        <div className="hidden lg:block lg:w-1/4 bg-boxBrown min-h-screen"></div>
+        <div className="hidden lg:block lg:w-1/4  min-h-screen">
+          <Calender />
+        </div>
       </div>
     </main>
   );

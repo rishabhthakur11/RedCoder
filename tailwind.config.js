@@ -13,6 +13,7 @@ module.exports = {
       textLightGray:"#d4d4d8",
       textRed: "#e11d48",
       boxBrown: "#404040",
+      textBlue:"#2563eb",
       white:"#ffffff"
     },
   },
