@@ -33,13 +33,10 @@ export const Header = () => {
           </div>
         ) : null}
         {/* LOGO */}
-        <Image src={logo} alt="RedCoder" width={100} height="auto" priority />
+        <Image src={logo} alt="RedCoder" width={100} priority />
         {/* Nav Link */}
         <div className="text-lg font-normal text-textGray flex gap-x-8 items-center hidden lg:flex">
           <Link className="hover:text-textRed" href="/">
-            Explore
-          </Link>
-          <Link className="hover:text-textRed" href="/problem">
             Problems
           </Link>
           <Link className="hover:text-textRed" href="/">

@@ -7,9 +7,6 @@ export const SideBar = () => {
     <>
       <div className="text-lg font-normal text-textGray  gap-y-8 flex flex-col mt-10 ml-6">
         <Link className="hover:text-textRed" href="/">
-          Explore
-        </Link>
-        <Link className="hover:text-textRed" href="/problem">
           Problems
         </Link>
         <Link className="hover:text-textRed" href="/">
