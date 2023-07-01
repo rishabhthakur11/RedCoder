@@ -7,28 +7,32 @@ interface Props {
 }
 
 function Tags(props: Props) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+  const handleDropdownToggle = () => {
+    setIsActive(!isActive);
+  };
+  const handleOptionClick = (option: string) => {
+    setIsActive(false);
+    console.log(`Selected option: ${option}`);
   };
 
   return (
     <div className="mt-5">
       <button
         className="px-4 py-2 text-textLightGray text-lg bg-boxBrown rounded-md focus:outline-none focus:shadow-outline"
-        onClick={toggleDropdown}
+        onClick={handleDropdownToggle}
       >
         {props.tagTitle}
-        {isOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+        {isActive ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
       </button>
-      {isOpen && (
+      {isActive && (
         <ul className="absolute z-10 w-1/2 md:w-1/4 py-1 mt-1 bg-boxBrown  rounded-md shadow-md">
           {props.toggleMenu.map((option, index) => (
             <li
               key={index}
               className="px-4 py-2 hover:bg-lightBrown cursor-pointer"
-              onClick={toggleDropdown}
+              onClick={() => handleOptionClick(option)}
             >
               {option}
             </li>

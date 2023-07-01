@@ -50,14 +50,14 @@ export const Calender = (props: Props) => {
   return (
     <div className="flex items-center justify-center py-8 px-1 rounded">
       <div className="max-w-sm w-full shadow-lg">
-        <div className="md:p-6 p-5 dark:bg-boxBrown bg-white rounded-t">
+        <div className="md:p-6 p-5 bg-boxBrown rounded-t">
           <div className="px-4 flex items-center justify-between">
             <span className="focus:outline-none  text-base font-bold text-textRed">
               {format(firstDayOfMonth, "MMMM yyyy")}
             </span>
             <div className="flex items-center">
-              <ChevronLeftIcon onClick={getPrevMonth} />
-              <ChevronRightIcon onClick={getNextMonth} />
+              <ChevronLeftIcon onClick={getPrevMonth} fontSize="small" />
+              <ChevronRightIcon onClick={getNextMonth} fontSize="small" />
             </div>
           </div>
           <div className="grid grid-cols-7 gap-6  place-items-center  mt-6">

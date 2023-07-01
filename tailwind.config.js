@@ -14,6 +14,8 @@ module.exports = {
       textRed: "#e11d48",
       boxBrown: "#404040",
       textBlue: "#2563eb",
+      darkGreen: "#65a30d",
+      darkYellow: "#eab308",
       white: "#ffffff",
       black: "#000000",
     },

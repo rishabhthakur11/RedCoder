@@ -1,12 +1,13 @@
 import { Roboto } from "next/font/google";
 import { Header } from "@/components/Header";
-import React from "react";
+import React, { useState } from "react";
 import { Course } from "@/components/Course";
 import Tags from "@/components/Tags";
 import SearchBox from "@/components/SearchBox";
 import TabularDesign from "@/components/TabularDesign";
 import { Calender } from "@/components/Calender";
 import { Progress } from "@/components/Progress";
+import Footer from "@/components/Footer";
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
   subsets: ["latin"],
@@ -66,6 +67,7 @@ export default function Home() {
           <Progress />
         </div>
       </div>
+      <Footer />
     </main>
   );
 }

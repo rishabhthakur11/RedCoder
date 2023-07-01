@@ -34,13 +34,13 @@ export const Progress = (props: Props) => {
               <div className={styles.label}>{progress}</div>
             </div>
             <div className="flex flex-col gap-y-2 text-base font-medium text-textGray">
-              <div className="flex">
+              <div className="flex text-darkGreen">
                 <h1>Easy</h1>
               </div>
-              <div className="flex">
+              <div className="flex text-darkYellow">
                 <h1>Medium</h1>
               </div>
-              <div className="flex">
+              <div className="flex text-textRed">
                 <h1>Hard</h1>
               </div>
             </div>
