@@ -17,7 +17,7 @@ export const Progress = (props: Props) => {
   return (
     <div className="flex items-center justify-center py-8 px-1 rounded">
       <div className="max-w-sm w-full shadow-lg">
-        <div className="md:p-3 p-5 dark:bg-boxBrown bg-white rounded-t">
+        <div className="md:p-3 p-5 bg-darkLayer rounded-t">
           <div className="px-4 flex items-center justify-between mb-6">
             <span className="focus:outline-none  text-base font-bold text-textRed">
               Session

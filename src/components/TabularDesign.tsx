@@ -75,7 +75,7 @@ function TabularDesign() {
               </th>
             </tr>
           </thead>
-          <tbody className="odd:bg-boxBrown divide-y divide-lightBrown">
+          <tbody className="odd:bg-boxBrown divide-y divide-darkLayer">
             {currentPageData.map((item) => {
               const difficultColor =
                 item.difficulty === "Easy"
@@ -85,7 +85,7 @@ function TabularDesign() {
                   : "text-textRed";
 
               return (
-                <tr key={item.id} className="even:bg-boxBrown">
+                <tr key={item.id} className="even:bg-darkLayer">
                   <td className="px-2 py-4 whitespace-nowrap text-base font-medium text-textGray">
                     {<TaskAltIcon color="success" />}
                   </td>

@@ -19,7 +19,7 @@ const AuthPage = (props: Props) => {
   const router = useRouter();
 
   useEffect(() => {
-    if (user) router.push("/");
+    if (user) router.replace("/problems");
     if (!loading && !user) setPageLoading(false);
   }, [user, router, loading]);
 

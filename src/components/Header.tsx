@@ -55,17 +55,6 @@ export const Header = () => {
       setIsOpen(false);
     }
   };
-  useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === "Escape") toggleDropdown;
-    };
-    window.addEventListener("keydown", handleEsc);
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      window.removeEventListener("keydown", handleEsc);
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
   return (
     <div className="mx-5 flex grow justify-between items-center max-w-7xl mx-auto">
       {/* Left Section */}
@@ -89,9 +78,9 @@ export const Header = () => {
         <div className="text-lg font-normal text-textGray flex gap-x-8 items-center hidden lg:flex">
           <Link
             className={`hover:text-textRed ${
-              activePage === "/" ? "text-textRed" : ""
+              activePage === "/problems" ? "text-textRed" : ""
             }`}
-            href="/"
+            href="/problems"
           >
             Problems
           </Link>
@@ -117,7 +106,7 @@ export const Header = () => {
       <div className="flex items-center gap-x-8">
         {/* Premium Button */}
         <button className="p-2 text-lg font-normal text-textRed bg-boxBrown rounded-md hidden md:block w-24 h-12">
-          Premium
+          <Link href="/premium">Premium</Link>
         </button>
         {/* streak icon */}
         {user && (

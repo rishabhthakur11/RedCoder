@@ -9,7 +9,7 @@ const roboto = Roboto({
   display: "swap",
 });
 
-const contest = (props: Props) => {
+export default function contest(props: Props) {
   return (
     <div className={`flex flex-col ${roboto.className} mb-10 h-screen`}>
       <div className="left-0 top-0 bg-mildBrown pt-3 pb-3 lg:p-3">
@@ -18,6 +18,4 @@ const contest = (props: Props) => {
       <p>contest Page is here</p>
     </div>
   );
-};
-
-export default contest;
+}

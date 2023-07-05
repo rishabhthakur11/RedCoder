@@ -8,7 +8,7 @@ const roboto = Roboto({
   subsets: ["latin"],
   display: "swap",
 });
-function discuss({}: Props) {
+export default function discuss({}: Props) {
   return (
     <div className={`flex flex-col ${roboto.className} mb-10 h-screen`}>
       <div className="left-0 top-0 bg-mildBrown pt-3 pb-3 lg:p-3">
@@ -19,4 +19,3 @@ function discuss({}: Props) {
   );
 }
 
-export default discuss;

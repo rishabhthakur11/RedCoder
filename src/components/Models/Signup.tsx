@@ -58,7 +58,7 @@ const Signup = (props: Props) => {
         starredProblems: [],
       };
       await setDoc(doc(firestore, "users", newUser.user.uid), userData);
-      router.push("/");
+      router.replace("/problems");
     } catch (error: any) {
       toast.error(error.message, {
         position: "top-center",

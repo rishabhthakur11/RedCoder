@@ -4,12 +4,15 @@ import { red } from "@mui/material/colors";
 import React from "react";
 import { useSignOut } from "react-firebase-hooks/auth";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { useRouter } from "next/router";
 
 const Logout: React.FC = () => {
   const [signOut, loading, error] = useSignOut(auth);
+  const router = useRouter();
 
   const handleLogout = () => {
     signOut();
+    router.push("/");
   };
   return (
     <Button

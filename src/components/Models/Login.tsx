@@ -17,7 +17,9 @@ function Login({}: Props) {
   const [inputs, setInputs] = useState({ email: "", password: "" });
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+
   const router = useRouter();
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -36,7 +38,7 @@ function Login({}: Props) {
         inputs.password
       );
       if (!newUser) return;
-      router.push("/");
+      router.replace("/problems");
     } catch (error: any) {
       toast.error("Email and Password don't match", {
         position: "top-center",
