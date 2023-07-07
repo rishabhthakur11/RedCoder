@@ -2,8 +2,8 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
-import image1 from "@/Assets/Course/assets/CarouselImages/image1.png";
-import image2 from "@/Assets/Course/assets/CarouselImages/image2.png";
+import image1 from "@/Assets/Course/heroImage.png";
+import image2 from "@/Assets/Course/problem.png";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 

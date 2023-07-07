@@ -1,5 +1,5 @@
 import React from "react";
-import heroImage from "@/Assets/Course/assets/heroSection/heroImage.png";
+import heroImage from "@/Assets/Course/heroImage.png";
 import Image from "next/image";
 import IphoneMokup from "@/Assets/Course/assets/heroSection/iPhonemokup.png";
 import { useRouter } from "next/router";
@@ -22,7 +22,7 @@ export const HeroSection = () => {
         </p>
         {/* Add Login button */}
         <div className="flex flex-col w-full items-center lg:items-start px-3 lg:px-0">
-          <div className="pt-[15px] pb-[15px] pr-4 pl-4 text-sm font-medium text-black bg-[#EABF4E] rounded-r-sm hover:scale-105 duration-300">
+          <div className="pt-[15px] pb-[15px] pr-4 pl-4 text-sm font-medium text-black bg-textRed rounded-r-sm hover:scale-105 duration-300">
             <button onClick={handleSubmit}>Get Started</button>
           </div>
         </div>
@@ -35,7 +35,7 @@ export const HeroSection = () => {
         <Image
           className="contain-cover"
           alt="lawinzo"
-          src={IphoneMokup}
+          src={heroImage}
           width={220}
           priority
         />

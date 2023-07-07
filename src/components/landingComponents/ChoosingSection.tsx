@@ -13,28 +13,22 @@ const ChoosingSection = (props: Props) => {
             Why Choose Us
           </h1>
           <p className="mb-5 text-sm lg:text-base font-normal text-center">
-            Lawyers trust us for our user-friendly platform, efficient case
-            management, and seamless collaboration tools.
+            At RedCoder, our mission is to help you improve yourself and land
+            your dream job.
           </p>
         </div>
         {/* Reusable Components */}
         <div className="p-5">
           <div className="mb-20">
             <FeatureStyle1
-              title="Effortless Legal Navigation"
-              subtitle="Instant Access to Cases and Hearings"
+              title="Effortless Problem Navigation"
+              subtitle="Instant Access to all top Companies Questions"
             />
           </div>
           <div className="md:mb-20">
             <FeatureStyle2
-              title="Instant Access to Cases and Hearings"
-              subtitle="Instant Access to Cases and Hearings"
-            />
-          </div>
-          <div className="mb-20">
-            <FeatureStyle1
-              title="Seamless Collaboration with Fellow Lawyers"
-              subtitle="Instant Access to Cases and Hearings"
+              title="Track your Performance"
+              subtitle="Instant Access to profile and streak Section"
             />
           </div>
         </div>

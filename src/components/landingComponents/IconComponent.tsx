@@ -7,7 +7,7 @@ interface Props {
 
 export const Icons = ({ logo }: Props) => {
   return (
-    <div className="bg-white rounded-md drop-shadow-md w-14">
+    <div className="bg-white rounded-md drop-shadow-md w-16">
       <Image object-fit="cover" alt="home Logo" src={logo} priority />
     </div>
   );

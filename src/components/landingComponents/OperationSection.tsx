@@ -1,14 +1,14 @@
 import Image from "next/image";
 import React from "react";
 import { OperationPointers } from "./OperationPointers";
-import homeImage from "@/Assets/Course/assets/heroSection/Home.png";
-import folderImage from "@/Assets/Course/assets/heroSection/Folder.png";
-import picture from "@/Assets/Course/assets/heroSection/Picture.png";
+import code from "@/Assets/Course/coding.png";
+import company from "@/Assets/Course/company.png";
+import developer from "@/Assets/Course/developer.png";
 interface Props {}
 
 export const OperationSection = () => {
   return (
-    <div className="flex justify-center py-16 bg-[#F5F8FF]">
+    <div className="flex justify-center py-16 bg-white">
       {/* Change the mt */}
       <div className="flex flex-col  items-center max-w-7xl mx-auto text-black">
         <div className="flex flex-col justify-center px-2 md:px-6 xl:px-0">
@@ -25,21 +25,21 @@ export const OperationSection = () => {
             title="Start Exploring"
             value={1}
             description="Explore is a well-organized tool that helps you get the most out of Redcoder."
-            logo={homeImage}
+            logo={code}
             colorFrom="orange"
           />
           <OperationPointers
             title="Companies & Candidates"
             value={2}
             description="Not only does LeetCode prepare candidates for technical interviews, we also help companies identify top technical talent."
-            logo={folderImage}
+            logo={company}
             colorFrom="blue"
           />
           <OperationPointers
             title="Developer"
             value={3}
             description=" At our core, Redcoder is about developers. Our powerful development tools such as Playground."
-            logo={picture}
+            logo={developer}
             colorFrom="violet"
           />
         </div>
