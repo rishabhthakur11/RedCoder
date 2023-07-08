@@ -16,7 +16,7 @@ export const OperationSection = () => {
             The methodology behind our operations
           </h1>
           <p className="mb-8 text-sm lg:text-base font-regular text-center">
-            Welcome aboard! Let's make the most of your journey with intuitive
+            Welcome aboard! Lets make the most of your journey with intuitive
             navigation, tailored recommendations, and endless possibilities.
           </p>
         </div>
