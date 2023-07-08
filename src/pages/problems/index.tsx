@@ -14,7 +14,7 @@ const roboto = Roboto({
   display: "swap",
 });
 
-export default function problems() {
+export default function index() {
   const Topics = [
     "Array",
     "LinkedList",
@@ -26,12 +26,13 @@ export default function problems() {
   ];
   const Difficulty = ["Easy", "Medium", "Hard"];
   const Status = ["To-do", "Solved", "Attempted"];
+  const [loadingProblems, setLoadingProblems] = useState(true);
 
   return (
     <div className={`flex flex-col ${roboto.className} mb-10 h-screen`}>
       <div className="left-0 top-0 bg-mildBrown pt-3 pb-3 lg:p-3">
         {/* NavBar */}
-        <Header />
+        <Header problemPage={false} />
       </div>
       <div className="lg:flex max-w-7xl mx-auto">
         <div className="lg:w-3/4">
@@ -58,7 +59,7 @@ export default function problems() {
             </div>
             {/* tabular Design  */}
             <div className="max-w-5xl mx-auto">
-              <TabularDesign />
+              <TabularDesign setLoadingProblems={setLoadingProblems} />
             </div>
           </div>
         </div>

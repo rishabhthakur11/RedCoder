@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { problems } from "@/mockproblems/problems";
 import ReactPaginate from "react-paginate";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
@@ -8,8 +7,23 @@ import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
 import Link from "next/link";
 import CloseIcon from "@mui/icons-material/Close";
 import YouTube from "react-youtube";
-
-function TabularDesign() {
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  orderBy,
+  query,
+} from "firebase/firestore";
+import { auth, firestore } from "@/firebase/firebase";
+import { DBProblem } from "@/utilities/types/problem";
+import { useAuthState } from "react-firebase-hooks/auth";
+type TabularDesignProps = {
+  setLoadingProblems: React.Dispatch<React.SetStateAction<boolean>>;
+};
+const TabularDesign: React.FC<TabularDesignProps> = ({
+  setLoadingProblems,
+}) => {
   const [youtubePlayer, setYoutubePlayer] = useState({
     isOpen: false,
     videoId: "",
@@ -17,16 +31,21 @@ function TabularDesign() {
   const closeModal = () => {
     setYoutubePlayer({ isOpen: false, videoId: "" });
   };
+
+  const problems = useGetProblems(setLoadingProblems);
+  const solvedProblems = useGetSolvedProblems();
+  console.log("solvedProblems", solvedProblems);
+  console.log("Total Problem", problems);
+
   const [currentPage, setCurrentPage] = useState(0);
-  const [data, setData] = useState(problems);
 
   const itemsPerPage = 9;
-  const pageCount = Math.ceil(data.length / itemsPerPage);
+  const pageCount = Math.ceil(problems.length / itemsPerPage);
   const offset = currentPage * itemsPerPage;
-  const currentPageData = data.slice(offset, offset + itemsPerPage);
+  const currentPageData = problems.slice(offset, offset + itemsPerPage);
 
-  const handlePageClick = (data: any) => {
-    setCurrentPage(data.selected);
+  const handlePageClick = (problems: any) => {
+    setCurrentPage(problems.selected);
   };
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
@@ -87,10 +106,12 @@ function TabularDesign() {
               return (
                 <tr key={item.id} className="even:bg-darkLayer">
                   <td className="px-2 py-4 whitespace-nowrap text-base font-medium text-textGray">
-                    {<TaskAltIcon color="success" />}
+                    {solvedProblems.includes(item.id) && (
+                      <TaskAltIcon color="success" />
+                    )}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-base font-medium text-textGray cursor-pointer hover:text-textBlue">
-                    <Link href={`/${item.id}`}>{item.title}</Link>
+                    <Link href={`/problems/${item.id}`}>{item.title}</Link>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-base font-medium text-textGray">
                     {item.category}
@@ -163,5 +184,53 @@ function TabularDesign() {
       )}
     </>
   );
-}
+};
 export default TabularDesign;
+
+function useGetProblems(
+  setLoadingProblems: React.Dispatch<React.SetStateAction<boolean>>
+) {
+  const [problems, setProblems] = useState<DBProblem[]>([]);
+
+  useEffect(() => {
+    const getProblems = async () => {
+      // fetching data logic
+      setLoadingProblems(true);
+      const q = query(
+        collection(firestore, "problems"),
+        orderBy("order", "asc")
+      );
+      const querySnapshot = await getDocs(q);
+      const tmp: DBProblem[] = [];
+      querySnapshot.forEach((doc) => {
+        tmp.push({ id: doc.id, ...doc.data() } as DBProblem);
+      });
+      setProblems(tmp);
+      setLoadingProblems(false);
+    };
+
+    getProblems();
+  }, [setLoadingProblems]);
+  return problems;
+}
+
+function useGetSolvedProblems() {
+  const [solvedProblems, setSolvedProblems] = useState<string[]>([]);
+  const [user] = useAuthState(auth);
+
+  useEffect(() => {
+    const getSolvedProblems = async () => {
+      const userRef = doc(firestore, "users", user!.uid);
+      const userDoc = await getDoc(userRef);
+
+      if (userDoc.exists()) {
+        setSolvedProblems(userDoc.data().solvedProblems);
+      }
+    };
+
+    if (user) getSolvedProblems();
+    if (!user) setSolvedProblems([]);
+  }, [user]);
+
+  return solvedProblems;
+}

@@ -1,4 +1,3 @@
-import { Header } from "@/components/Header";
 import AuthModel from "@/components/Models/AuthModel";
 import { authModalState } from "@/atoms/authModalAtom";
 import Navbar from "@/components/Navbar";
@@ -8,7 +7,6 @@ import { auth } from "@/firebase/firebase";
 import { useRecoilValue } from "recoil";
 import { useRouter } from "next/router";
 import React from "react";
-import Footer from "@/components/Footer";
 
 type Props = {};
 

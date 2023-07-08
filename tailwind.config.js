@@ -18,7 +18,10 @@ module.exports = {
       darkYellow: "#eab308",
       white: "#ffffff",
       black: "#000000",
-      darkLayer: "rgb(40,40,40)"
+      darkLayer: "rgb(40,40,40)",
+      dark2: "hsla(0,0%,100%,.14)",
+      dark3: "hsla(0,0%,100%,.1)",
+      darkdivider: "rgb(61, 61, 61)",
     },
   },
   plugins: [],

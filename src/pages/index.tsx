@@ -11,7 +11,7 @@ export default function Home() {
       <main className="scroll-smooth">
         {/* HeaderSection */}
         <section className="sticky top-0 z-50 bg-mildBrown pt-3 pb-3 lg:p-3">
-          <Header />
+          <Header problemPage={false} />
         </section>
         <section id="heroSection">
           <HeroSection />

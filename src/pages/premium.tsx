@@ -20,7 +20,7 @@ export default function premium({}: Props) {
   return (
     <div className="">
       <div className="left-0 top-0 bg-mildBrown pt-3 pb-3 lg:p-3">
-        <Header />
+        <Header problemPage={false} />
       </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24 sm:py-32">
         <div className="mx-auto max-w-2xl sm:text-center">
