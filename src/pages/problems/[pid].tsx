@@ -9,7 +9,7 @@ type ProblemPageProps = {
   problem: Problem;
 };
 
-const problemPage = ({ problem }: ProblemPageProps) => {
+const ProblemPage = ({ problem }: ProblemPageProps) => {
   const hasMounted = useHasMounted();
 
   if (!hasMounted) return null;
@@ -24,7 +24,7 @@ const problemPage = ({ problem }: ProblemPageProps) => {
   );
 };
 
-export default problemPage;
+export default ProblemPage;
 
 // fetch the local data
 //  SSG
