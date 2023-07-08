@@ -69,7 +69,7 @@ const Signup = (props: Props) => {
   };
   useEffect(() => {
     if (error)
-      toast.error("User Already Exsist", {
+      toast.error(error.message, {
         position: "top-center",
         autoClose: 2000,
         theme: "dark",
