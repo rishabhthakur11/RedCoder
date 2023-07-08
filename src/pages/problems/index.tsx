@@ -14,7 +14,7 @@ const roboto = Roboto({
   display: "swap",
 });
 
-const problem = () => {
+const Problem = () => {
   const Topics = [
     "Array",
     "LinkedList",
@@ -79,7 +79,7 @@ const problem = () => {
     </div>
   );
 };
-export default problem;
+export default Problem;
 
 const LoadingSkeleton = () => {
   return (
