@@ -5,16 +5,6 @@ import Footer from "@/components/Footer";
 import PremiumFeatureBox from "@/components/PremiumFeatureBox";
 
 type Props = {};
-const includedFeatures = [
-  "Video Solutions",
-  "Access to Premium Content",
-  "Select Questions by Company",
-  "Autocomplete",
-  "Debugger",
-  "Lightning Judge",
-  "Sort Questions by Prevalence",
-  "Unlimited Playgrounds",
-];
 
 export default function premium({}: Props) {
   return (
@@ -29,7 +19,7 @@ export default function premium({}: Props) {
           </h2>
           <p className="mt-6 text-lg leading-8 text-textGray">
             Take 15% off monthly and 20% off yearly subsciptions for a limited
-            time with code{" "}
+            time with code
             <span className="text-textRed font-bold">"BIGDEAL"</span>
           </p>
         </div>
