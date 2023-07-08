@@ -20,7 +20,7 @@ export default function premium({}: Props) {
           <p className="mt-6 text-lg leading-8 text-textGray">
             Take 15% off monthly and 20% off yearly subsciptions for a limited
             time with code
-            <span className="text-textRed font-bold">"BIGDEAL"</span>
+            <span className="text-textRed font-bold">BIGDEAL</span>
           </p>
         </div>
         <PremiumFeatureBox />
