@@ -16,7 +16,7 @@ const ProblemPage = ({ problem }: ProblemPageProps) => {
 
   return (
     <div>
-      <div className="sticky top-0 z-50 bg-mildBrown pt-3 pb-3 lg:p-3">
+      <div className="sticky top-0 z-50 bg-mildBrown pt-1 pb-1">
         <Header problemPage={true} />
       </div>
 	  <Workspace problem={problem} />

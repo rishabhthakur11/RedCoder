@@ -136,7 +136,7 @@ const Signup = (props: Props) => {
         {loading ? "Registering..." : "Register"}
       </button>
 
-      <div className="text-sm font-medium text-gray-300">
+      <div className="text-sm font-medium text-textGray">
         Already have an account ?
         <a
           href="#"

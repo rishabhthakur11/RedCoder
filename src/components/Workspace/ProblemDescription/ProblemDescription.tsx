@@ -207,7 +207,7 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = ({
       <div className="flex h-11 w-full items-center pt-2 bg-boxBrown text-white overflow-x-hidden">
         <div
           className={
-            "bg-mildBrown rounded-t-[5px] px-5 py-[10px] text-xs cursor-pointer"
+            "bg-mildBrown rounded-t-[5px] px-5 py-[10px] text-md cursor-pointer"
           }
         >
           Description
@@ -224,9 +224,9 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = ({
               </div>
             </div>
             {!loading && currentProblem && (
-              <div className="flex items-center mt-3">
+              <div className="flex items-center mt-3 text-md">
                 <div
-                  className={`${problemDifficultyClass} inline-block rounded-[21px] bg-opacity-[.15] px-2.5 py-1 text-xs font-medium capitalize `}
+                  className={`${problemDifficultyClass} inline-block rounded-[21px] bg-opacity-[.15] px-2.5 py-1 text-sm font-medium capitalize text-white`}
                 >
                   {currentProblem.difficulty}
                 </div>
@@ -236,11 +236,11 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = ({
                   </div>
                 )}
                 <div
-                  className="flex items-center cursor-pointer hover:bg-dark3 space-x-1 rounded p-[3px]  ml-4 text-lg transition-colors duration-200 text-textBlue"
+                  className="flex items-center cursor-pointer hover:bg-dark3 space-x-1 rounded p-[3px]  ml-4 text-lg transition-colors duration-200 text-textGray"
                   onClick={handleLike}
                 >
                   {liked && !updating && (
-                    <AiFillLike className="text-textBlue" />
+                    <AiFillLike  className="text-darkGreen" />
                   )}
                   {!liked && !updating && <AiFillLike />}
                   {updating && (
@@ -250,11 +250,11 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = ({
                   <span className="text-xs">{currentProblem.likes}</span>
                 </div>
                 <div
-                  className="flex items-center cursor-pointer hover:bg-dark3 space-x-1 rounded p-[3px]  ml-4 text-lg transition-colors duration-200  text-darkBlue"
+                  className="flex items-center cursor-pointer hover:bg-dark3 space-x-1 rounded p-[3px]  ml-4 text-lg transition-colors duration-200  text-textGray"
                   onClick={handleDislike}
                 >
                   {disliked && !updating && (
-                    <AiFillDislike className="text-darkBlue" />
+                    <AiFillDislike className="text-darkGreen" />
                   )}
                   {!disliked && !updating && <AiFillDislike />}
                   {updating && (
@@ -264,7 +264,7 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = ({
                   <span className="text-xs">{currentProblem.dislikes}</span>
                 </div>
                 <div
-                  className="cursor-pointer hover:bg-dark3  rounded p-[3px]  ml-4 text-xl transition-colors duration-200 text-green-s text-dark-gray-6 "
+                  className="cursor-pointer hover:bg-dark3  rounded p-[3px]  ml-4 text-xl transition-colors duration-200 text-green-s text-textGray "
                   onClick={handleStar}
                 >
                   {starred && !updating && (
@@ -289,7 +289,7 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = ({
             )}
 
             {/* Problem Statement(paragraphs) */}
-            <div className="text-white text-md">
+            <div className="text-white text-xl">
               <div
                 dangerouslySetInnerHTML={{ __html: problem.problemStatement }}
               />
@@ -299,7 +299,7 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = ({
             <div className="mt-4">
               {problem.examples.map((example, index) => (
                 <div key={example.id}>
-                  <p className="font-medium text-white ">
+                  <p className="font-medium text-white text-xl">
                     Example {index + 1}:{" "}
                   </p>
                   {example.img && (
@@ -325,7 +325,7 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = ({
 
             {/* Constraints */}
             <div className="my-8 pb-4">
-              <div className="text-white text-sm font-medium">Constraints:</div>
+              <div className="text-white text-lg font-medium">Constraints:</div>
               <ul className="text-white ml-5 list-disc ">
                 <div
                   dangerouslySetInnerHTML={{ __html: problem.constraints }}
@@ -358,10 +358,10 @@ function useGetCurrentProblem(problemId: string) {
         // easy, medium, hard
         setProblemDifficultyClass(
           problem.difficulty === "Easy"
-            ? "bg-olive text-olive"
+            ? "bg-darkGreen"
             : problem.difficulty === "Medium"
-            ? "bg-dark-yellow text-dark-yellow"
-            : " bg-dark-pink text-dark-pink"
+            ? "bg-darkYellow"
+            : "bg-textRed"
         );
       }
       setLoading(false);

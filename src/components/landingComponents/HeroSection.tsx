@@ -11,8 +11,8 @@ export const HeroSection = () => {
   };
 
   return (
-    <div className="flex py-12 md:py-24 lg:flex-row flex-col-reverse items-center">
-      <div className="lg:px-10 flex flex-col lg:items-start lg:text-left mb-16 md:mb-0 items-center text-center max-w-3xl mx-auto mt-3">
+    <div className="flex py-12 md:py-24 lg:flex-row flex-col-reverse items-center bg-black">
+      <div className="lg:px-10 flex flex-col lg:items-start lg:text-left mb-16 md:mb-0 items-center text-center max-w-3xl mx-auto mt-3 text-white">
         <h1 className="xl:text-6xl text-4xl xl:leading-[65px] leading-normal mb-4 font-normal">
           A New Way to Learn <span className="font-bold">Coding</span>
         </h1>

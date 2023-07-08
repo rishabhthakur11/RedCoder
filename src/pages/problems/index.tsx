@@ -29,7 +29,7 @@ const Problem = () => {
   const [loadingProblems, setLoadingProblems] = useState(true);
 
   return (
-    <div className={`flex flex-col ${roboto.className} mb-10 h-screen`}>
+    <div className={`flex flex-col ${roboto.className} mb-10 h-fit bg-black`}>
       <div className="left-0 top-0 bg-mildBrown pt-3 pb-3 lg:p-3">
         {/* NavBar */}
         <Header problemPage={false} />

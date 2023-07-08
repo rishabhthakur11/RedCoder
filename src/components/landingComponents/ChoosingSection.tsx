@@ -6,7 +6,7 @@ interface Props {}
 
 const ChoosingSection = (props: Props) => {
   return (
-    <div className="choosing-section mt-10 md:mt-26 xl:mt-36 2xl:mt-52">
+    <div className="choosing-section mt-10 md:mt-26 xl:mt-36 2xl:mt-52 bg-black text-white">
       <div className="container max-w-7xl mx-auto">
         <div className="mb-10 flex flex-col text-center px-2 md:px-6 xl:px-0">
           <h1 className="mb-3 text-3xl xl:text-5xl font-bold text-center">

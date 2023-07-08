@@ -141,7 +141,7 @@ export const Header = ({ problemPage }: HeaderProps) => {
         {problemPage && (
           <div className="flex items-center gap-4 flex-1 justify-center">
             <div
-              className="flex items-center justify-center rounded bg-boxBrown h-8 w-8 cursor-pointer"
+              className="flex items-center justify-center rounded bg-boxBrown h-8 w-8 cursor-pointer text-white"
               onClick={() => handleProblemChange(false)}
             >
               <ChevronLeftIcon />
@@ -156,7 +156,7 @@ export const Header = ({ problemPage }: HeaderProps) => {
               <p>Problem List</p>
             </Link>
             <div
-              className="flex items-center justify-center rounded bg-boxBrown h-8 w-8 cursor-pointer"
+              className="flex items-center justify-center rounded bg-boxBrown h-8 w-8 cursor-pointer text-white"
               onClick={() => handleProblemChange(true)}
             >
               <ChevronRightIcon />

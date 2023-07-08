@@ -7,7 +7,7 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <div className="md:px-20 px-8 text-white mt-32 pb-10">
+    <div className="md:px-20 px-8 text-white mt-32 pb-10 bg-black">
       <div className="flex flex-col md:flex-row">
         <div className="container  md:w-1/2">
           <Link href="/">

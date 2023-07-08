@@ -32,7 +32,7 @@ const Timer: React.FC<TimerProps> = () => {
   return (
     <div>
       {showTimer ? (
-        <div className="flex items-center space-x-2 bg-dark3 p-1.5 cursor-pointer rounded hover:bg-dark2">
+        <div className="flex items-center space-x-2 bg-dark3 p-1.5 cursor-pointer rounded hover:bg-dark2 text-white">
           <div>{formatTime(time)}</div>
           <AccessAlarmIcon
             onClick={() => {
@@ -43,7 +43,7 @@ const Timer: React.FC<TimerProps> = () => {
         </div>
       ) : (
         <div
-          className="flex items-center p-1 h-8 hover:bg-dark3 rounded cursor-pointer"
+          className="flex items-center p-1 h-8 hover:bg-dark3 rounded cursor-pointer text-white"
           onClick={() => setShowTimer(true)}
         >
           <svg

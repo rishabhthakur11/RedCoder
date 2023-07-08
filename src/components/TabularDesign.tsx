@@ -59,7 +59,7 @@ const TabularDesign: React.FC<TabularDesignProps> = ({
   return (
     <>
       <div>
-        <table className="min-w-full divide-y divide-lightBrown mt-8">
+        <table className="min-w-full divide-y divide-lightBrown mt-8 bg-black">
           <thead className="">
             <tr>
               <th

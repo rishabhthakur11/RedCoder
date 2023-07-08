@@ -8,7 +8,7 @@ import { OperationSection } from "@/components/landingComponents/OperationSectio
 export default function Home() {
   return (
     <>
-      <main className="scroll-smooth">
+      <main className="scroll-smooth bg-black">
         {/* HeaderSection */}
         <section className="sticky top-0 z-50 bg-mildBrown pt-3 pb-3 lg:p-3">
           <Header problemPage={false} />
@@ -19,16 +19,16 @@ export default function Home() {
         <section id="operationSection">
           <OperationSection />
         </section>
-        <section id="choosingSection">
+        <section id="choosingSection" className="bg-black">
           <ChoosingSection />
         </section>
         <section id="bannerSection">
           <BannerSection />
         </section>
+        <footer className="bg-black">
+          <Footer />
+        </footer>
       </main>
-      <footer>
-        <Footer />
-      </footer>
     </>
   );
 }

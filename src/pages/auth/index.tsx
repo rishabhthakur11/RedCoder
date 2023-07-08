@@ -24,7 +24,7 @@ const AuthPage = (props: Props) => {
   if (pageLoading) return null;
 
   return (
-    <div className="h-screen relative">
+    <div className="h-screen relative bg-black">
       <div className="max-7-xl mx-auto">
         <Navbar />
         <AuthModel />

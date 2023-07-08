@@ -20,7 +20,7 @@ export const CourseCard = ({ details }: Props) => {
           alt="course1"
         />
         <div>
-          <h1 className="text-xs lg:text-base">{details.title}</h1>
+          <h1 className="text-xs lg:text-base text-white">{details.title}</h1>
           <p className="mt-1 text-[8px] text-textGray lg:text-sm">
             {details.subtitle}
           </p>

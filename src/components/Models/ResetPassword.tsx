@@ -14,23 +14,31 @@ function ResetPassword({}: Props) {
     setAuthModalState((prev) => ({ ...prev, type: "login" }));
   };
   const [email, setEmail] = useState("");
-	const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(auth);
-	const handleReset = async (e: React.FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
-		const success = await sendPasswordResetEmail(email);
-		if (success) {
-			toast.success("Password reset email sent", { position: "top-center", autoClose: 3000, theme: "dark" });
-		}
-	};
+  const [sendPasswordResetEmail, sending, error] =
+    useSendPasswordResetEmail(auth);
+  const handleReset = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const success = await sendPasswordResetEmail(email);
+    if (success) {
+      toast.success("Password reset email sent", {
+        position: "top-center",
+        autoClose: 3000,
+        theme: "dark",
+      });
+    }
+  };
 
-	useEffect(() => {
-		if (error) {
-			alert(error.message);
-		}
-	}, [error]);
+  useEffect(() => {
+    if (error) {
+      alert(error.message);
+    }
+  }, [error]);
 
   return (
-    <form className="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8 pt-6" onSubmit={handleReset}>
+    <form
+      className="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8 pt-6"
+      onSubmit={handleReset}
+    >
       <button
         type="button"
         className="bg-transparent inline-flex items-center"
@@ -46,7 +54,7 @@ function ResetPassword({}: Props) {
       <div>
         <label
           htmlFor="email"
-          className="text-sm font-medium block mb-2 text-gray-300"
+          className="text-sm font-medium block mb-2 text-textGray"
         >
           Your email
         </label>
