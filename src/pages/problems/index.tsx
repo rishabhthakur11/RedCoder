@@ -14,7 +14,7 @@ const roboto = Roboto({
   display: "swap",
 });
 
-export default function index() {
+const problem = () => {
   const Topics = [
     "Array",
     "LinkedList",
@@ -60,7 +60,7 @@ export default function index() {
             {/* tabular Design  */}
             <div className="max-w-5xl mx-auto">
               {loadingProblems && (
-                <div className="max-w-[1200px] mx-auto sm:w-7/12 w-full animate-pulse">
+                <div className="max-w-[1200px] mx-auto  w-full animate-pulse">
                   {[...Array(10)].map((_, idx) => (
                     <LoadingSkeleton key={idx} />
                   ))}
@@ -78,15 +78,16 @@ export default function index() {
       <Footer />
     </div>
   );
-}
+};
+export default problem;
 
 const LoadingSkeleton = () => {
   return (
     <div className="flex items-center space-x-12 mt-4 px-6">
-      <div className="w-6 h-6 shrink-0 rounded-full bg-dark-layer-1"></div>
-      <div className="h-4 sm:w-52  w-32  rounded-full bg-dark-layer-1"></div>
-      <div className="h-4 sm:w-52  w-32 rounded-full bg-dark-layer-1"></div>
-      <div className="h-4 sm:w-52 w-32 rounded-full bg-dark-layer-1"></div>
+      <div className="w-6 h-6 shrink-0 rounded-full bg-dark2"></div>
+      <div className="h-4 sm:w-52  w-32  rounded-full bg-dark2"></div>
+      <div className="h-4 sm:w-52  w-32 rounded-full bg-dark2"></div>
+      <div className="h-4 sm:w-52 w-32 rounded-full bg-dark2"></div>
       <span className="sr-only">Loading...</span>
     </div>
   );
