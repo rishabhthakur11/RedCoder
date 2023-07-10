@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 interface Props {
@@ -8,6 +8,7 @@ interface Props {
 
 function Tags(props: Props) {
   const [isActive, setIsActive] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const handleDropdownToggle = () => {
     setIsActive(!isActive);
@@ -16,7 +17,21 @@ function Tags(props: Props) {
     setIsActive(false);
     console.log(`Selected option: ${option}`);
   };
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node)
+    ) {
+      setIsActive(false);
+    }
+  };
 
+  useEffect(() => {
+    window.addEventListener("mousedown", handleClickOutside);
+    return () => window.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  
   return (
     <div className="mt-5">
       <button

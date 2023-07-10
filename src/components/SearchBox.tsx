@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-function SearchBox() {
+const SearchBox = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
-
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(`Search term: ${searchTerm}`);
   };
 
   return (
@@ -31,6 +29,6 @@ function SearchBox() {
       </div>
     </form>
   );
-}
+};
 
 export default SearchBox;
