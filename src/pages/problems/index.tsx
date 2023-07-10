@@ -59,6 +59,7 @@ const Problem = () => {
             </div>
             {/* tabular Design  */}
             <div className="max-w-5xl mx-auto">
+              <TabularDesign setLoadingProblems={setLoadingProblems} />
               {loadingProblems && (
                 <div className="max-w-[1200px] mx-auto  w-full animate-pulse">
                   {[...Array(10)].map((_, idx) => (
@@ -66,11 +67,10 @@ const Problem = () => {
                   ))}
                 </div>
               )}
-              <TabularDesign setLoadingProblems={setLoadingProblems} />
             </div>
           </div>
         </div>
-        <div className="hidden lg:block lg:w-1/4  min-h-screen">
+        <div className="hidden lg:block lg:w-1/4  min-h-screen mt-4">
           <Calender />
           <Progress />
         </div>

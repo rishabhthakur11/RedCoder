@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import logo from "../Assets/Logo/logoWhite.png";
-import WhatshotIcon from "@mui/icons-material/Whatshot";
 import avatar from "../Assets/Logo/avatar.png";
 import CloseIcon from "@mui/icons-material/Close";
 import { SideBar } from "./SideBar";
@@ -234,11 +233,12 @@ export const Header = ({ problemPage }: HeaderProps) => {
                     <TerminalIcon sx={{ color: grey[500] }} fontSize="large" />
                     <p className="">My Playground</p>
                   </div>
-
-                  <div className="flex gap-3 items-center px-4 py-2 hover:bg-textLightGray cursor-pointer">
-                    <NoteAddIcon sx={{ color: grey[500] }} fontSize="large" />
-                    <p className="">Notebook</p>
-                  </div>
+                  <Link href="/addproblems">
+                    <div className="flex gap-3 items-center px-4 py-2 hover:bg-textLightGray cursor-pointer">
+                      <NoteAddIcon sx={{ color: grey[500] }} fontSize="large" />
+                      <p className="">Add Problems</p>
+                    </div>
+                  </Link>
 
                   <div className="flex gap-3 items-center px-4 py-2 hover:bg-textLightGray cursor-pointer">
                     <AccessTimeIcon
