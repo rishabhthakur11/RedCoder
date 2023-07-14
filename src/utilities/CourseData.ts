@@ -21,41 +21,41 @@ export const CourseData:{
         title:"Top Interview Questions",
         subtitle:"Must-do list for Interview Prep",
         image: cover,
-        links: "/interview150"
+        links: "/interview"
     },
     {
         id:2,
         title:"RedCoder 75",
         subtitle:"Ace Coding Interview with 75 Qs",
         image: cover2,
-        links: "/interview150"
+        links: "/interview"
     },
     {
         id:3,
         title:"SQL 50",
         subtitle:"Crack SQL Interview in 50 Qs",
         image: cover3,
-        links: "/interview150"
+        links: "/interview"
     },
     {
         id:4,
         title:"30 Days of JS",
         subtitle:"Learn JS Basics with 30 Qs",
         image: cover5,
-        links: "/interview150"
+        links: "/interview"
     },
     {
         id:5,
         title:"Amazon Spring '23 High'",
         subtitle:"Practice Amazon 25 Recently Asked Qs",
         image: cover6,
-        links: "/interview150"
+        links: "/interview"
     },
     {
         id:6,
         title:"Dynamic Programming",
         subtitle:"10 Essential DP Pattern",
         image: cover7,
-        links: "/interview150"
+        links: "/interview"
     },
 ]
