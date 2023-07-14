@@ -221,13 +221,15 @@ export const Header = ({ problemPage }: HeaderProps) => {
                 </div>
                 <hr className="text-textGray" />
                 <div className="mt-2 text-black text-lg  font-light flex flex-col gap-y-4">
-                  <div className="flex gap-3 items-center px-4 py-2 hover:bg-textLightGray cursor-pointer">
-                    <FavoriteBorderIcon
-                      sx={{ color: grey[500] }}
-                      fontSize="large"
-                    />
-                    <p className="">My List</p>
-                  </div>
+                  <Link href="/mylist">
+                    <div className="flex gap-3 items-center px-4 py-2 hover:bg-textLightGray cursor-pointer">
+                      <FavoriteBorderIcon
+                        sx={{ color: grey[500] }}
+                        fontSize="large"
+                      />
+                      <p className="">My List</p>
+                    </div>
+                  </Link>
 
                   <div className="flex gap-3 items-center px-4 py-2 hover:bg-textLightGray cursor-pointer">
                     <TerminalIcon sx={{ color: grey[500] }} fontSize="large" />
