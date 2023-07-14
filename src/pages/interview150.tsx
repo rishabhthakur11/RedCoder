@@ -5,7 +5,7 @@ import ProblemsTable from "@/components/ProblemTable/ProblemTable";
 
 type Props = {};
 
-export default function interview150({}: Props) {
+const interview150 = ({}: Props) => {
   const [loadingProblems, setLoadingProblems] = useState(true);
   const hasMounted = useHasMounted();
 
@@ -59,7 +59,9 @@ export default function interview150({}: Props) {
       </main>
     </>
   );
-}
+};
+
+export default interview150;
 
 const LoadingSkeleton = () => {
   return (
