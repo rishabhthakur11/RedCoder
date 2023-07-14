@@ -3,7 +3,7 @@ import useHasMounted from "@/hooks/useHasMounted";
 import { Header } from "@/components/Header";
 import ProblemsTable from "@/components/ProblemTable/ProblemTable";
 
-const interview = () => {
+const Interview = () => {
   const [loadingProblems, setLoadingProblems] = useState(true);
   const hasMounted = useHasMounted();
   if (!hasMounted) return null;
@@ -58,7 +58,7 @@ const interview = () => {
   );
 };
 
-export default interview;
+export default Interview;
 
 const LoadingSkeleton = () => {
   return (
