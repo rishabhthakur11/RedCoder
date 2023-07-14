@@ -20,7 +20,7 @@ export default function contest(props: Props) {
           Coming Soon
         </h1>
         <p className="text-lg text-textGray mb-8 animate-fade-in-up">
-          We're working hard to bring you an amazing experience.
+          We &apos; re working hard to bring you an amazing experience.
         </p>
         <div className="flex animate-fade-in">
           <input
