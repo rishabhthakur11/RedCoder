@@ -162,11 +162,21 @@ function useGetProblems(
         collection(firestore, "problems"),
         orderBy("order", "asc")
       );
+      // top question query kai liye
+      const s = query(
+        collection(firestore, "topproblems"),
+        orderBy("order", "asc")
+      );
       const querySnapshot = await getDocs(q);
+      const querySnapshottop = await getDocs(s);
       const tmp: DBProblem[] = [];
       querySnapshot.forEach((doc) => {
         tmp.push({ id: doc.id, ...doc.data() } as DBProblem);
       });
+      querySnapshottop.forEach((doc) => {
+        tmp.push({ id: doc.id, ...doc.data() } as DBProblem);
+      });
+      // Ab total sari problem show hongiii
       setProblems(tmp);
       setLoadingProblems(false);
     };

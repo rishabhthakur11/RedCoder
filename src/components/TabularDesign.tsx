@@ -34,8 +34,6 @@ const TabularDesign: React.FC<TabularDesignProps> = ({
 
   const problems = useGetProblems(setLoadingProblems);
   const solvedProblems = useGetSolvedProblems();
-  console.log("solvedProblems", solvedProblems);
-  console.log("Total Problem", problems);
 
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -111,7 +109,22 @@ const TabularDesign: React.FC<TabularDesignProps> = ({
                     )}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-base font-medium text-textGray cursor-pointer hover:text-textBlue">
-                    <Link href={`/problems/${item.id}`}>{item.title}</Link>
+                    {item.link ? (
+                      <Link
+                        href={item.link}
+                        className="hover:text-blue-600 cursor-pointer"
+                        target="_blank"
+                      >
+                        {item.title}
+                      </Link>
+                    ) : (
+                      <Link
+                        className="hover:text-blue-600 cursor-pointer"
+                        href={`/problems/${item.id}`}
+                      >
+                        {item.title}
+                      </Link>
+                    )}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-base font-medium text-textGray">
                     {item.category}
